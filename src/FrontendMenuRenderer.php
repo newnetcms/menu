@@ -82,4 +82,21 @@ class FrontendMenuRenderer
             ]);
         }
     }
+
+    public function title($menuId, $default = null)
+    {
+        if (is_numeric($menuId)) {
+            $menu = $this->menuRepository->find($menuId);
+        } elseif (is_string($menuId)) {
+            $menu = $this->menuRepository->findBySlug($menuId);
+        } elseif ($menuId instanceof Menu) {
+            $menu = $menuId;
+        }
+
+        if ($menu) {
+            return $menu->name;
+        }
+
+        return $default;
+    }
 }
