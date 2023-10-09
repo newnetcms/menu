@@ -25,7 +25,7 @@ class MenuRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'slug' => 'required|unique:menu__menus,slug,'.$this->route('id'),
+            'slug' => 'required|unique:menu__menus,slug,'.$this->route('menu'),
         ];
     }
 
