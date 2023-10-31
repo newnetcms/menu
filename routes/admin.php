@@ -15,6 +15,6 @@ Route::prefix('menu')
     ->group(function () {
         Route::resource('menu-item', MenuItemController::class);
 
-        Route::post('update-tree', [MenuItemController::class, 'updateTree'])
+        Route::post('menu-item/update-tree', [MenuItemController::class, 'updateTree'])
             ->name('menu.admin.menu-item.update-tree');
     });
