@@ -14,7 +14,7 @@
             @if($item->children->count())
                 <div class="dropdown-menu">
                     @foreach($item->children as $child)
-                        <a class="dropdown-item" href="{{ $child->getUrl() }}">
+                        <a class="dropdown-item" href="{{ $child->getUrl() }}" target="{{ $child->target }}">
                             {{ $child->label }}
                         </a>
                     @endforeach
