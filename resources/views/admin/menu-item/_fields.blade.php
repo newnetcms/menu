@@ -32,6 +32,7 @@
                 'default' => '_self',
             ])
             @input(['name' => 'icon', 'label' => __('menu::menu-item.icon'), 'helper' => __('menu::menu-item.icon_helper')])
+            @mediamanager(['name' => 'image', 'label' => __('menu::menu-item.image')])
             @input(['name' => 'class', 'label' => __('menu::menu-item.class')])
         </div>
     </div>

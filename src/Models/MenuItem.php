@@ -5,6 +5,7 @@ namespace Newnet\Menu\Models;
 use Illuminate\Database\Eloquent\Model;
 use Newnet\Core\Support\Traits\TranslatableTrait;
 use Newnet\Core\Support\Traits\TreeCacheableTrait;
+use Newnet\Media\Traits\HasMediaTrait;
 use Newnet\Menu\Contracts\FrontendMenuBuilderInterface;
 
 /**
@@ -92,6 +93,7 @@ class MenuItem extends Model
 {
     use TreeCacheableTrait;
     use TranslatableTrait;
+    use HasMediaTrait;
 
     protected $table = 'menu__menu_items';
 
@@ -104,6 +106,7 @@ class MenuItem extends Model
         'menu_builder_class',
         'menu_builder_args',
         'parent_id',
+        'image',
     ];
 
     public $translatable = [
@@ -180,5 +183,15 @@ class MenuItem extends Model
     public function getUrlAttribute()
     {
         return $this->getUrl();
+    }
+
+    public function setImageAttribute($value)
+    {
+        $this->mediaAttributes['image'] = $value;
+    }
+
+    public function getImageAttribute()
+    {
+        return $this->getFirstMedia('image');
     }
 }
