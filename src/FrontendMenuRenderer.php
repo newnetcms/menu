@@ -50,6 +50,7 @@ class FrontendMenuRenderer
             if (view()->exists($view)) {
                 return view($view)->with([
                     'items' => $menuItems,
+                    'menu' => $menu,
                 ]);
             }
 
@@ -57,6 +58,7 @@ class FrontendMenuRenderer
             if (view()->exists($viewPath)) {
                 return view($viewPath)->with([
                     'items' => $menuItems,
+                    'menu' => $menu,
                 ]);
             }
         }
@@ -65,6 +67,7 @@ class FrontendMenuRenderer
         if (view()->exists($viewPath)) {
             return view($viewPath)->with([
                 'items' => $menuItems,
+                'menu' => $menu,
             ]);
         }
 
@@ -72,6 +75,7 @@ class FrontendMenuRenderer
         if (view()->exists($viewPath)) {
             return view($viewPath)->with([
                 'items' => $menuItems,
+                'menu' => $menu,
             ]);
         }
 
@@ -79,6 +83,7 @@ class FrontendMenuRenderer
         if (view()->exists($viewPath)) {
             return view($viewPath)->with([
                 'items' => $menuItems,
+                'menu' => $menu,
             ]);
         }
     }

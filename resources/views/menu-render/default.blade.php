@@ -1,4 +1,4 @@
-<ul>
+<ul id="menu_{{ $menu->id }}" class="{{ $menu->slug }}">
     @foreach($items as $item)
         <li class="menu-item menu-item-{{ $item->id }} {{ $item->class }} {{ $item->isActive() ? 'active' : '' }} {{ $item->children->count() ? 'has-child' : '' }}">
             <a href="{{ $item->getUrl() }}" target="{{ $item->target }}">
