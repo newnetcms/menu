@@ -19,4 +19,9 @@ abstract class BaseFrontendMenuBuilder implements FrontendMenuBuilderInterface
 
         return $this;
     }
+
+    public function getArgs()
+    {
+        return $this->args;
+    }
 }
