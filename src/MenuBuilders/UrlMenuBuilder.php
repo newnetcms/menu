@@ -16,7 +16,16 @@ class UrlMenuBuilder extends BaseFrontendMenuBuilder
 
     public function getFrontendUrl()
     {
-        return $this->args['url'] ?? '#';
+        $url = $this->args['url'] ?? '#';
+
+        // Fragment-only links (e.g. "#hero") are page-relative anchors, not
+        // real paths - leave them alone so they keep scrolling the current
+        // page instead of being rewritten into a locale-prefixed URL.
+        if (str_starts_with($url, '#')) {
+            return $url;
+        }
+
+        return localize_url($url);
     }
 
     public function isActive()
