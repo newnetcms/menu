@@ -3,7 +3,7 @@
     "description": "Menu",
     "require": {
         "newnetcms/core": "*",
-        "kalnoy/nestedset": "^6.0"
+        "kalnoy/nestedset": "^6.0|^7.0"
     },
     "autoload": {
         "psr-4": {
